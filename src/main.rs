@@ -22,19 +22,17 @@ struct Node {
 }
 
 fn math(exp: String) -> i32 {
-        let tokens = exp.split(" ");
+        let tokens = exp.split(" ").collect::<Vec<&str>>();
 
-        if (tokens.len() == 0) {
+        if tokens.len() == 0 {
             return -1;
         }
 
-        if (tokens.len() == 1) {
-            // return tokens[0].parse::<132>().unwrap();
+        if tokens.len() == 1 {
+            return tokens[0].parse::<i32>().unwrap();
         }
 
-        // let mut masterNode = match tokens[2] {
-        //     "+" => if tokens.len() >= 4 {Node {op: Op::plus} }
-        // }
+        let mut masterNode = Node {operator: Op::plus, left: NodeVal:: Undefined, right: NodeVal:: Undefined};
 
         1
 
